@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalDB1
 {
-    public partial class FormLogeo : Form
+    public partial class FormSalon : Form
     {
-        public FormLogeo()
+        public FormSalon()
         {
             InitializeComponent();
+        }
+
+        private void FormSalon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

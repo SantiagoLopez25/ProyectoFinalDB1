@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalDB1
 {
-    public partial class FormLogeo : Form
+    public partial class FormServicio : Form
     {
-        public FormLogeo()
+        public FormServicio()
         {
             InitializeComponent();
         }
