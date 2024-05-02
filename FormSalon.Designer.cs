@@ -35,16 +35,16 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.groupBoxSalon = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxDireccion = new System.Windows.Forms.TextBox();
-            this.comboBoxTipoSalon = new System.Windows.Forms.ComboBox();
-            this.comboBoxTamannio = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.radioButtonDisponibilidad = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.comboBoxTamannio = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoSalon = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxDireccion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).BeginInit();
             this.groupBoxSalon.SuspendLayout();
             this.SuspendLayout();
@@ -129,48 +129,6 @@
             this.groupBoxSalon.TabStop = false;
             this.groupBoxSalon.Text = "Datos Salón";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 233);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 32);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Direción";
-            // 
-            // textBoxDireccion
-            // 
-            this.textBoxDireccion.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDireccion.Location = new System.Drawing.Point(176, 226);
-            this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(964, 39);
-            this.textBoxDireccion.TabIndex = 20;
-            // 
-            // comboBoxTipoSalon
-            // 
-            this.comboBoxTipoSalon.FormattingEnabled = true;
-            this.comboBoxTipoSalon.Items.AddRange(new object[] {
-            "Grande",
-            "Mediano",
-            "Pequeño"});
-            this.comboBoxTipoSalon.Location = new System.Drawing.Point(842, 146);
-            this.comboBoxTipoSalon.Name = "comboBoxTipoSalon";
-            this.comboBoxTipoSalon.Size = new System.Drawing.Size(298, 40);
-            this.comboBoxTipoSalon.TabIndex = 19;
-            // 
-            // comboBoxTamannio
-            // 
-            this.comboBoxTamannio.FormattingEnabled = true;
-            this.comboBoxTamannio.Items.AddRange(new object[] {
-            "Grande",
-            "Mediano",
-            "Pequeño"});
-            this.comboBoxTamannio.Location = new System.Drawing.Point(176, 152);
-            this.comboBoxTamannio.Name = "comboBoxTamannio";
-            this.comboBoxTamannio.Size = new System.Drawing.Size(298, 40);
-            this.comboBoxTamannio.TabIndex = 18;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -184,7 +142,7 @@
             // radioButtonDisponibilidad
             // 
             this.radioButtonDisponibilidad.AutoSize = true;
-            this.radioButtonDisponibilidad.Location = new System.Drawing.Point(988, 77);
+            this.radioButtonDisponibilidad.Location = new System.Drawing.Point(984, 77);
             this.radioButtonDisponibilidad.Name = "radioButtonDisponibilidad";
             this.radioButtonDisponibilidad.Size = new System.Drawing.Size(21, 20);
             this.radioButtonDisponibilidad.TabIndex = 15;
@@ -228,6 +186,48 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(298, 39);
             this.textBoxNombre.TabIndex = 10;
+            // 
+            // comboBoxTamannio
+            // 
+            this.comboBoxTamannio.FormattingEnabled = true;
+            this.comboBoxTamannio.Items.AddRange(new object[] {
+            "Grande",
+            "Mediano",
+            "Pequeño"});
+            this.comboBoxTamannio.Location = new System.Drawing.Point(176, 152);
+            this.comboBoxTamannio.Name = "comboBoxTamannio";
+            this.comboBoxTamannio.Size = new System.Drawing.Size(298, 40);
+            this.comboBoxTamannio.TabIndex = 18;
+            // 
+            // comboBoxTipoSalon
+            // 
+            this.comboBoxTipoSalon.FormattingEnabled = true;
+            this.comboBoxTipoSalon.Items.AddRange(new object[] {
+            "Grande",
+            "Mediano",
+            "Pequeño"});
+            this.comboBoxTipoSalon.Location = new System.Drawing.Point(842, 146);
+            this.comboBoxTipoSalon.Name = "comboBoxTipoSalon";
+            this.comboBoxTipoSalon.Size = new System.Drawing.Size(298, 40);
+            this.comboBoxTipoSalon.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(32, 233);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 32);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Direción";
+            // 
+            // textBoxDireccion
+            // 
+            this.textBoxDireccion.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDireccion.Location = new System.Drawing.Point(176, 226);
+            this.textBoxDireccion.Name = "textBoxDireccion";
+            this.textBoxDireccion.Size = new System.Drawing.Size(964, 39);
+            this.textBoxDireccion.TabIndex = 20;
             // 
             // FormSalon
             // 
