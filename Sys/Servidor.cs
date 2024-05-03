@@ -21,6 +21,14 @@ namespace ProyectoFinalDB1.Sys
 
         public SqlConnection SQLServer { get => this._SQLServer;  }
 
+        public void AbrirConexin()
+        {
+            if (this._SQLServer != null)
+            {
+                this._SQLServer.Open();
+            }
+        }
+
         public void CerrarConexion()
         {
             if (this._SQLServer != null)

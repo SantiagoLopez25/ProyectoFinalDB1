@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinalDB1.Sys;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace ProyectoFinalDB1
 {
     public partial class FormLogeo : Form
     {
+        private Servidor servidor;
+
         public FormLogeo()
         {
             InitializeComponent();
+            ComponentesAdicionales();
+        }
+
+        private void ComponentesAdicionales()
+        {
+            servidor = new Servidor();
         }
     }
 }
