@@ -43,14 +43,14 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonListar = new System.Windows.Forms.Button();
             this.dataGridViewPersona = new System.Windows.Forms.DataGridView();
-            this.comboBoxEmail = new System.Windows.Forms.ComboBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.groupBoxPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxPersona
             // 
-            this.groupBoxPersona.Controls.Add(this.comboBoxEmail);
+            this.groupBoxPersona.Controls.Add(this.txtApellido);
             this.groupBoxPersona.Controls.Add(this.label4);
             this.groupBoxPersona.Controls.Add(this.radioButtonActivo);
             this.groupBoxPersona.Controls.Add(this.label3);
@@ -70,11 +70,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(674, 154);
+            this.label4.Location = new System.Drawing.Point(96, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 32);
+            this.label4.Size = new System.Drawing.Size(102, 32);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Email";
+            this.label4.Text = "Apellido";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // radioButtonActivo
             // 
@@ -100,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 157);
+            this.label2.Location = new System.Drawing.Point(636, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 32);
             this.label2.TabIndex = 13;
@@ -109,7 +110,7 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTelefono.Location = new System.Drawing.Point(250, 157);
+            this.textBoxTelefono.Location = new System.Drawing.Point(784, 163);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(298, 39);
             this.textBoxTelefono.TabIndex = 12;
@@ -135,7 +136,7 @@
             // buttonNuevo
             // 
             this.buttonNuevo.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.Location = new System.Drawing.Point(48, 339);
+            this.buttonNuevo.Location = new System.Drawing.Point(48, 347);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(148, 80);
             this.buttonNuevo.TabIndex = 11;
@@ -145,7 +146,7 @@
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(334, 339);
+            this.buttonGuardar.Location = new System.Drawing.Point(319, 347);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 12;
@@ -155,7 +156,7 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(607, 339);
+            this.buttonEditar.Location = new System.Drawing.Point(583, 347);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 13;
@@ -165,7 +166,7 @@
             // buttonEliminar
             // 
             this.buttonEliminar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(1125, 339);
+            this.buttonEliminar.Location = new System.Drawing.Point(1125, 347);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(148, 80);
             this.buttonEliminar.TabIndex = 14;
@@ -175,7 +176,7 @@
             // buttonListar
             // 
             this.buttonListar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListar.Location = new System.Drawing.Point(862, 339);
+            this.buttonListar.Location = new System.Drawing.Point(858, 347);
             this.buttonListar.Name = "buttonListar";
             this.buttonListar.Size = new System.Drawing.Size(148, 80);
             this.buttonListar.TabIndex = 15;
@@ -185,26 +186,25 @@
             // dataGridViewPersona
             // 
             this.dataGridViewPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPersona.Location = new System.Drawing.Point(48, 474);
+            this.dataGridViewPersona.Location = new System.Drawing.Point(48, 478);
             this.dataGridViewPersona.Name = "dataGridViewPersona";
             this.dataGridViewPersona.RowHeadersWidth = 62;
             this.dataGridViewPersona.RowTemplate.Height = 28;
-            this.dataGridViewPersona.Size = new System.Drawing.Size(1225, 348);
+            this.dataGridViewPersona.Size = new System.Drawing.Size(1225, 313);
             this.dataGridViewPersona.TabIndex = 16;
             // 
-            // comboBoxEmail
+            // txtApellido
             // 
-            this.comboBoxEmail.FormattingEnabled = true;
-            this.comboBoxEmail.Location = new System.Drawing.Point(797, 157);
-            this.comboBoxEmail.Name = "comboBoxEmail";
-            this.comboBoxEmail.Size = new System.Drawing.Size(298, 40);
-            this.comboBoxEmail.TabIndex = 18;
+            this.txtApellido.Location = new System.Drawing.Point(250, 163);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(298, 39);
+            this.txtApellido.TabIndex = 19;
             // 
             // FormPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 844);
+            this.ClientSize = new System.Drawing.Size(1318, 845);
             this.Controls.Add(this.dataGridViewPersona);
             this.Controls.Add(this.buttonListar);
             this.Controls.Add(this.buttonEliminar);
@@ -237,6 +237,6 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonListar;
         private System.Windows.Forms.DataGridView dataGridViewPersona;
-        private System.Windows.Forms.ComboBox comboBoxEmail;
+        private System.Windows.Forms.TextBox txtApellido;
     }
 }
