@@ -30,6 +30,7 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBoxPersona = new System.Windows.Forms.GroupBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.radioButtonActivo = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,9 +44,10 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonListar = new System.Windows.Forms.Button();
             this.dataGridViewPersona = new System.Windows.Forms.DataGridView();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxPersona
@@ -59,12 +61,19 @@
             this.groupBoxPersona.Controls.Add(this.label1);
             this.groupBoxPersona.Controls.Add(this.textBoxNombre);
             this.groupBoxPersona.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPersona.Location = new System.Drawing.Point(48, 56);
+            this.groupBoxPersona.Location = new System.Drawing.Point(48, 34);
             this.groupBoxPersona.Name = "groupBoxPersona";
             this.groupBoxPersona.Size = new System.Drawing.Size(1225, 249);
             this.groupBoxPersona.TabIndex = 10;
             this.groupBoxPersona.TabStop = false;
             this.groupBoxPersona.Text = "Datos Persona";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(250, 163);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(298, 39);
+            this.txtApellido.TabIndex = 19;
             // 
             // label4
             // 
@@ -136,7 +145,7 @@
             // buttonNuevo
             // 
             this.buttonNuevo.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.Location = new System.Drawing.Point(48, 347);
+            this.buttonNuevo.Location = new System.Drawing.Point(48, 325);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(148, 80);
             this.buttonNuevo.TabIndex = 11;
@@ -146,7 +155,7 @@
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(319, 347);
+            this.buttonGuardar.Location = new System.Drawing.Point(319, 325);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 12;
@@ -156,7 +165,7 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(583, 347);
+            this.buttonEditar.Location = new System.Drawing.Point(583, 325);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 13;
@@ -166,7 +175,7 @@
             // buttonEliminar
             // 
             this.buttonEliminar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(1125, 347);
+            this.buttonEliminar.Location = new System.Drawing.Point(1125, 325);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(148, 80);
             this.buttonEliminar.TabIndex = 14;
@@ -176,7 +185,7 @@
             // buttonListar
             // 
             this.buttonListar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListar.Location = new System.Drawing.Point(858, 347);
+            this.buttonListar.Location = new System.Drawing.Point(858, 325);
             this.buttonListar.Name = "buttonListar";
             this.buttonListar.Size = new System.Drawing.Size(148, 80);
             this.buttonListar.TabIndex = 15;
@@ -185,38 +194,48 @@
             // 
             // dataGridViewPersona
             // 
+            this.dataGridViewPersona.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPersona.Location = new System.Drawing.Point(48, 478);
+            this.dataGridViewPersona.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewPersona.Location = new System.Drawing.Point(48, 456);
             this.dataGridViewPersona.Name = "dataGridViewPersona";
             this.dataGridViewPersona.RowHeadersWidth = 62;
             this.dataGridViewPersona.RowTemplate.Height = 28;
             this.dataGridViewPersona.Size = new System.Drawing.Size(1225, 313);
             this.dataGridViewPersona.TabIndex = 16;
             // 
-            // txtApellido
+            // panel1
             // 
-            this.txtApellido.Location = new System.Drawing.Point(250, 163);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(298, 39);
-            this.txtApellido.TabIndex = 19;
+            this.panel1.Controls.Add(this.groupBoxPersona);
+            this.panel1.Controls.Add(this.dataGridViewPersona);
+            this.panel1.Controls.Add(this.buttonNuevo);
+            this.panel1.Controls.Add(this.buttonListar);
+            this.panel1.Controls.Add(this.buttonGuardar);
+            this.panel1.Controls.Add(this.buttonEliminar);
+            this.panel1.Controls.Add(this.buttonEditar);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1340, 900);
+            this.panel1.TabIndex = 17;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FormPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1318, 845);
-            this.Controls.Add(this.dataGridViewPersona);
-            this.Controls.Add(this.buttonListar);
-            this.Controls.Add(this.buttonEliminar);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonGuardar);
-            this.Controls.Add(this.buttonNuevo);
-            this.Controls.Add(this.groupBoxPersona);
+            this.Controls.Add(this.panel1);
             this.Name = "FormPersona";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Persona";
+            this.Load += new System.EventHandler(this.FormPersona_Load);
             this.groupBoxPersona.ResumeLayout(false);
             this.groupBoxPersona.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,5 +257,6 @@
         private System.Windows.Forms.Button buttonListar;
         private System.Windows.Forms.DataGridView dataGridViewPersona;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Panel panel1;
     }
 }

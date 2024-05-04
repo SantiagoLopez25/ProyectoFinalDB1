@@ -35,24 +35,28 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.groupBoxSalon = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxDireccion = new System.Windows.Forms.TextBox();
+            this.comboBoxTipoSalon = new System.Windows.Forms.ComboBox();
+            this.comboBoxTamannio = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.radioButtonDisponibilidad = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.comboBoxTamannio = new System.Windows.Forms.ComboBox();
-            this.comboBoxTipoSalon = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxDireccion = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).BeginInit();
             this.groupBoxSalon.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewSalon
             // 
+            this.dataGridViewSalon.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSalon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSalon.Location = new System.Drawing.Point(46, 487);
+            this.dataGridViewSalon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewSalon.Location = new System.Drawing.Point(47, 490);
             this.dataGridViewSalon.Name = "dataGridViewSalon";
             this.dataGridViewSalon.RowHeadersWidth = 62;
             this.dataGridViewSalon.RowTemplate.Height = 28;
@@ -62,7 +66,7 @@
             // buttonListar
             // 
             this.buttonListar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListar.Location = new System.Drawing.Point(860, 357);
+            this.buttonListar.Location = new System.Drawing.Point(861, 360);
             this.buttonListar.Name = "buttonListar";
             this.buttonListar.Size = new System.Drawing.Size(148, 80);
             this.buttonListar.TabIndex = 22;
@@ -72,7 +76,7 @@
             // buttonEliminar
             // 
             this.buttonEliminar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(1123, 357);
+            this.buttonEliminar.Location = new System.Drawing.Point(1124, 360);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(148, 80);
             this.buttonEliminar.TabIndex = 21;
@@ -82,7 +86,7 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(605, 357);
+            this.buttonEditar.Location = new System.Drawing.Point(606, 360);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 20;
@@ -92,7 +96,7 @@
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(332, 357);
+            this.buttonGuardar.Location = new System.Drawing.Point(333, 360);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 19;
@@ -102,7 +106,7 @@
             // buttonNuevo
             // 
             this.buttonNuevo.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.Location = new System.Drawing.Point(46, 357);
+            this.buttonNuevo.Location = new System.Drawing.Point(47, 360);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(148, 80);
             this.buttonNuevo.TabIndex = 18;
@@ -122,12 +126,54 @@
             this.groupBoxSalon.Controls.Add(this.label1);
             this.groupBoxSalon.Controls.Add(this.textBoxNombre);
             this.groupBoxSalon.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSalon.Location = new System.Drawing.Point(46, 41);
+            this.groupBoxSalon.Location = new System.Drawing.Point(47, 44);
             this.groupBoxSalon.Name = "groupBoxSalon";
             this.groupBoxSalon.Size = new System.Drawing.Size(1225, 281);
             this.groupBoxSalon.TabIndex = 17;
             this.groupBoxSalon.TabStop = false;
             this.groupBoxSalon.Text = "Datos Salón";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(32, 233);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 32);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Direción";
+            // 
+            // textBoxDireccion
+            // 
+            this.textBoxDireccion.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDireccion.Location = new System.Drawing.Point(176, 226);
+            this.textBoxDireccion.Name = "textBoxDireccion";
+            this.textBoxDireccion.Size = new System.Drawing.Size(964, 39);
+            this.textBoxDireccion.TabIndex = 20;
+            // 
+            // comboBoxTipoSalon
+            // 
+            this.comboBoxTipoSalon.FormattingEnabled = true;
+            this.comboBoxTipoSalon.Items.AddRange(new object[] {
+            "Grande",
+            "Mediano",
+            "Pequeño"});
+            this.comboBoxTipoSalon.Location = new System.Drawing.Point(842, 146);
+            this.comboBoxTipoSalon.Name = "comboBoxTipoSalon";
+            this.comboBoxTipoSalon.Size = new System.Drawing.Size(298, 40);
+            this.comboBoxTipoSalon.TabIndex = 19;
+            // 
+            // comboBoxTamannio
+            // 
+            this.comboBoxTamannio.FormattingEnabled = true;
+            this.comboBoxTamannio.Items.AddRange(new object[] {
+            "Grande",
+            "Mediano",
+            "Pequeño"});
+            this.comboBoxTamannio.Location = new System.Drawing.Point(176, 152);
+            this.comboBoxTamannio.Name = "comboBoxTamannio";
+            this.comboBoxTamannio.Size = new System.Drawing.Size(298, 40);
+            this.comboBoxTamannio.TabIndex = 18;
             // 
             // label4
             // 
@@ -187,66 +233,37 @@
             this.textBoxNombre.Size = new System.Drawing.Size(298, 39);
             this.textBoxNombre.TabIndex = 10;
             // 
-            // comboBoxTamannio
+            // panel1
             // 
-            this.comboBoxTamannio.FormattingEnabled = true;
-            this.comboBoxTamannio.Items.AddRange(new object[] {
-            "Grande",
-            "Mediano",
-            "Pequeño"});
-            this.comboBoxTamannio.Location = new System.Drawing.Point(176, 152);
-            this.comboBoxTamannio.Name = "comboBoxTamannio";
-            this.comboBoxTamannio.Size = new System.Drawing.Size(298, 40);
-            this.comboBoxTamannio.TabIndex = 18;
-            // 
-            // comboBoxTipoSalon
-            // 
-            this.comboBoxTipoSalon.FormattingEnabled = true;
-            this.comboBoxTipoSalon.Items.AddRange(new object[] {
-            "Grande",
-            "Mediano",
-            "Pequeño"});
-            this.comboBoxTipoSalon.Location = new System.Drawing.Point(842, 146);
-            this.comboBoxTipoSalon.Name = "comboBoxTipoSalon";
-            this.comboBoxTipoSalon.Size = new System.Drawing.Size(298, 40);
-            this.comboBoxTipoSalon.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 233);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 32);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Direción";
-            // 
-            // textBoxDireccion
-            // 
-            this.textBoxDireccion.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDireccion.Location = new System.Drawing.Point(176, 226);
-            this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(964, 39);
-            this.textBoxDireccion.TabIndex = 20;
+            this.panel1.Controls.Add(this.groupBoxSalon);
+            this.panel1.Controls.Add(this.dataGridViewSalon);
+            this.panel1.Controls.Add(this.buttonNuevo);
+            this.panel1.Controls.Add(this.buttonListar);
+            this.panel1.Controls.Add(this.buttonGuardar);
+            this.panel1.Controls.Add(this.buttonEliminar);
+            this.panel1.Controls.Add(this.buttonEditar);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1324, 855);
+            this.panel1.TabIndex = 24;
             // 
             // FormSalon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1318, 844);
-            this.Controls.Add(this.dataGridViewSalon);
-            this.Controls.Add(this.buttonListar);
-            this.Controls.Add(this.buttonEliminar);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonGuardar);
-            this.Controls.Add(this.buttonNuevo);
-            this.Controls.Add(this.groupBoxSalon);
+            this.Controls.Add(this.panel1);
             this.Name = "FormSalon";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salón";
             this.Load += new System.EventHandler(this.FormSalon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).EndInit();
             this.groupBoxSalon.ResumeLayout(false);
             this.groupBoxSalon.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -270,5 +287,6 @@
         private System.Windows.Forms.ComboBox comboBoxTamannio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxDireccion;
+        private System.Windows.Forms.Panel panel1;
     }
 }
