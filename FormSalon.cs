@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinalDB1.Sys;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,17 @@ namespace ProyectoFinalDB1
         public FormSalon()
         {
             InitializeComponent();
+            
         }
+
+      
 
         private void FormSalon_Load(object sender, EventArgs e)
         {
-
+            buttonEliminar.Enabled = false;
+            buttonGuardar.Enabled = false;
+            buttonEditar.Enabled = false;
+            groupBoxSalon.Enabled = false;
         }
     }
 }

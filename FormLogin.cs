@@ -25,5 +25,10 @@ namespace ProyectoFinalDB1
         {
             servidor = new Servidor();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

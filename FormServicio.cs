@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinalDB1.Sys;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace ProyectoFinalDB1
         public FormServicio()
         {
             InitializeComponent();
+            
+        }
+      
+        private void FormServicio_Load(object sender, EventArgs e)
+        {
+             buttonGuardar.Enabled = false;
+            buttonEliminar.Enabled = false;
+            buttonEditar.Enabled = false;
+            groupBoxServicio.Enabled = false;
+        }
+
+        private void groupBoxServicio_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
