@@ -16,19 +16,20 @@ namespace ProyectoFinalDB1
         public FormServicio()
         {
             InitializeComponent();
-            componentesAdicionales();
+            
         }
-        private void componentesAdicionales()
-        {
-            Servidor servidor = new Servidor();
-        }
-
+      
         private void FormServicio_Load(object sender, EventArgs e)
         {
              buttonGuardar.Enabled = false;
             buttonEliminar.Enabled = false;
             buttonEditar.Enabled = false;
             groupBoxServicio.Enabled = false;
+        }
+
+        private void groupBoxServicio_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

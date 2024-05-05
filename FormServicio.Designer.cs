@@ -125,6 +125,7 @@
             this.groupBoxServicio.TabIndex = 17;
             this.groupBoxServicio.TabStop = false;
             this.groupBoxServicio.Text = "Datos Servicio";
+            this.groupBoxServicio.Enter += new System.EventHandler(this.groupBoxServicio_Enter);
             // 
             // radioButtonDisponibilidad
             // 

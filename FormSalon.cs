@@ -16,13 +16,10 @@ namespace ProyectoFinalDB1
         public FormSalon()
         {
             InitializeComponent();
-            componentesAdicionales();
+            
         }
 
-        private void componentesAdicionales()
-        {
-            Servidor servidor = new Servidor();
-        }
+      
 
         private void FormSalon_Load(object sender, EventArgs e)
         {

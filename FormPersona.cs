@@ -16,13 +16,10 @@ namespace ProyectoFinalDB1
         public FormPersona()
         {
             InitializeComponent();
-            componentesAdicionales();
+           
         }
 
-        private void componentesAdicionales()
-        {
-            Servidor servidor = new Servidor();
-        }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
