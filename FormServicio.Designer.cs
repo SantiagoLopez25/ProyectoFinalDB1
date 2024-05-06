@@ -109,6 +109,7 @@
             this.buttonNuevo.TabIndex = 18;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // groupBoxServicio
             // 
