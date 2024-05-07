@@ -18,7 +18,7 @@ namespace ProyectoFinalDB1.Sys
         public Config()
         {
             this.server = "localhost";
-            this.database = "DBProyecto1";
+            this.database = "ProyectoDB1";
 
             this.user = "sa";
             this.pass = "database";
