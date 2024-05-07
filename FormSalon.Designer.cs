@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.dataGridViewSalon = new System.Windows.Forms.DataGridView();
-            this.buttonListar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.groupBoxSalon = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxDireccion = new System.Windows.Forms.TextBox();
             this.comboBoxTipoSalon = new System.Windows.Forms.ComboBox();
             this.comboBoxTamannio = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButtonDisponibilidad = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,16 +61,7 @@
             this.dataGridViewSalon.RowTemplate.Height = 28;
             this.dataGridViewSalon.Size = new System.Drawing.Size(1225, 320);
             this.dataGridViewSalon.TabIndex = 23;
-            // 
-            // buttonListar
-            // 
-            this.buttonListar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListar.Location = new System.Drawing.Point(861, 360);
-            this.buttonListar.Name = "buttonListar";
-            this.buttonListar.Size = new System.Drawing.Size(148, 80);
-            this.buttonListar.TabIndex = 22;
-            this.buttonListar.Text = "Listar";
-            this.buttonListar.UseVisualStyleBackColor = true;
+            this.dataGridViewSalon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSalon_CellContentClick);
             // 
             // buttonEliminar
             // 
@@ -86,22 +76,24 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(606, 360);
+            this.buttonEditar.Location = new System.Drawing.Point(787, 360);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 20;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(333, 360);
+            this.buttonGuardar.Location = new System.Drawing.Point(434, 360);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 19;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonNuevo
             // 
@@ -112,15 +104,16 @@
             this.buttonNuevo.TabIndex = 18;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // groupBoxSalon
             // 
+            this.groupBoxSalon.Controls.Add(this.checkBox1);
             this.groupBoxSalon.Controls.Add(this.label5);
             this.groupBoxSalon.Controls.Add(this.textBoxDireccion);
             this.groupBoxSalon.Controls.Add(this.comboBoxTipoSalon);
             this.groupBoxSalon.Controls.Add(this.comboBoxTamannio);
             this.groupBoxSalon.Controls.Add(this.label4);
-            this.groupBoxSalon.Controls.Add(this.radioButtonDisponibilidad);
             this.groupBoxSalon.Controls.Add(this.label3);
             this.groupBoxSalon.Controls.Add(this.label2);
             this.groupBoxSalon.Controls.Add(this.label1);
@@ -132,6 +125,15 @@
             this.groupBoxSalon.TabIndex = 17;
             this.groupBoxSalon.TabStop = false;
             this.groupBoxSalon.Text = "Datos Salón";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(983, 72);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(22, 21);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -185,16 +187,6 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Tipo";
             // 
-            // radioButtonDisponibilidad
-            // 
-            this.radioButtonDisponibilidad.AutoSize = true;
-            this.radioButtonDisponibilidad.Location = new System.Drawing.Point(984, 77);
-            this.radioButtonDisponibilidad.Name = "radioButtonDisponibilidad";
-            this.radioButtonDisponibilidad.Size = new System.Drawing.Size(21, 20);
-            this.radioButtonDisponibilidad.TabIndex = 15;
-            this.radioButtonDisponibilidad.TabStop = true;
-            this.radioButtonDisponibilidad.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -238,7 +230,6 @@
             this.panel1.Controls.Add(this.groupBoxSalon);
             this.panel1.Controls.Add(this.dataGridViewSalon);
             this.panel1.Controls.Add(this.buttonNuevo);
-            this.panel1.Controls.Add(this.buttonListar);
             this.panel1.Controls.Add(this.buttonGuardar);
             this.panel1.Controls.Add(this.buttonEliminar);
             this.panel1.Controls.Add(this.buttonEditar);
@@ -271,14 +262,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewSalon;
-        private System.Windows.Forms.Button buttonListar;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.GroupBox groupBoxSalon;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButtonDisponibilidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -288,5 +277,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxDireccion;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
