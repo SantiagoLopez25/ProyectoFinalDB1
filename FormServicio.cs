@@ -1,4 +1,4 @@
-﻿using ProyectoFinalDB1.Sys;
+using ProyectoFinalDB1.Sys;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

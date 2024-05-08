@@ -32,10 +32,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+
+
+            this.pass = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.user = new System.Windows.Forms.TextBox();
+
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -77,7 +80,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.pass);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Location = new System.Drawing.Point(378, 346);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -85,19 +88,31 @@
             this.panel3.Size = new System.Drawing.Size(341, 34);
             this.panel3.TabIndex = 7;
             // 
-            // textBox2
+            // pass
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(44, 0);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(296, 33);
-            this.textBox2.TabIndex = 1;
+
+            this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass.Location = new System.Drawing.Point(29, 0);
+            this.pass.Name = "pass";
+            this.pass.PasswordChar = '*';
+            this.pass.Size = new System.Drawing.Size(197, 22);
+            this.pass.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Image = global::ProyectoFinalDB1.Properties.Resources.unlock_icon_242828;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 21);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+
             // 
             // pictureBox3
             // 
@@ -115,7 +130,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.user);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(380, 286);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -123,17 +138,17 @@
             this.panel2.Size = new System.Drawing.Size(341, 36);
             this.panel2.TabIndex = 6;
             // 
-            // textBox1
+
+            // user
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(44, 0);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 28);
-            this.textBox1.TabIndex = 1;
-            // 
+            this.user.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.user.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Location = new System.Drawing.Point(29, 0);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(197, 19);
+            this.user.TabIndex = 1;
+
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -194,9 +209,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox user;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -72,7 +72,7 @@
       <HintPath>packages\Microsoft.IdentityModel.Tokens.6.35.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -157,6 +157,18 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPantallaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPantallaAdmin.Designer.cs">
+      <DependentUpon>FormPantallaAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPantallaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPantallaEmpleado.Designer.cs">
+      <DependentUpon>FormPantallaEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPersona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +199,12 @@
     <Compile Include="Sys\Servidor.cs" />
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPantallaAdmin.resx">
+      <DependentUpon>FormPantallaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPantallaEmpleado.resx">
+      <DependentUpon>FormPantallaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersona.resx">
       <DependentUpon>FormPersona.cs</DependentUpon>

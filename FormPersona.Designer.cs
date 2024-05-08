@@ -1,4 +1,4 @@
-﻿namespace ProyectoFinalDB1
+namespace ProyectoFinalDB1
 {
     partial class FormPersona
     {
