@@ -1,5 +1,4 @@
-using ProyectoFinalDB1.Sys;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using ProyectoFinalDB1.Sys;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ProyectoFinalDB1
 {
-    public partial class FormServicio : Form
+    public partial class FormTipoSalon : Form
     {
-         //private SqlConnection conex;
+
+        //private SqlConnection conex;
         private SqlCommand comando;
         private SqlDataAdapter adaptador;
         private SqlParameter param;
@@ -23,58 +24,50 @@ namespace ProyectoFinalDB1
         private string cadena;
         private string codigo;
         Servidor servidor = new Servidor();
-        public FormServicio()
+        public FormTipoSalon()
         {
             InitializeComponent();
-            
-        }
-      
-        private void FormServicio_Load(object sender, EventArgs e)
-        {
-             buttonGuardar.Enabled = false;
-            buttonEliminar.Enabled = false;
-            buttonEditar.Enabled = false;
-            groupBoxServicio.Enabled = false;
-            checkBox1.Checked = false;
-            listar();
-        }
-
-        private void groupBoxServicio_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
-            
             buttonGuardar.Enabled = true;
-            groupBoxServicio.Enabled=true;
+            
+            groupBoxTipo.Enabled = true;
             limpiar();
+        }
 
+        private void limpiar()
+        {
+            textBoxNombre.Text = "";
+        }
+
+        private void FormTipoSalon_Load(object sender, EventArgs e)
+        {
+            buttonGuardar.Enabled = false;
+            buttonEliminar.Enabled = false;
+            buttonEditar.Enabled = false;
+            groupBoxTipo.Enabled = false;
+            listar();
+            
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-           
-
             string sql, respuesta;
-            
+
 
 
             try
             {
                 servidor.AbrirConexin();
-                sql = "Insert Into Servicio (nombre, cantidad_restante, disponibilidad) Values(@nom, @cant, @dis)"; //instruccion para insertar
+                sql = "Insert Into Tipo_salon (nombre) Values(@nom)"; //instruccion para insertar
                 comando = new SqlCommand(sql, servidor.SQLServer);
                 param = new SqlParameter("@nom", textBoxNombre.Text);
                 comando.Parameters.Add(param);
-                param = new SqlParameter("@cant", textBoxCantidad.Text);
-                comando.Parameters.Add(param);
-          
-                param = new SqlParameter("@dis", checkBox1.Checked);
-                comando.Parameters.Add(param);
+              
                 comando.ExecuteNonQuery();
-                respuesta = "Se ha creado un nuevo registro en Servicio";
+                respuesta = "Se ha creado un nuevo registro en Tipo de salón";
             }
 
             catch (Exception error)
@@ -88,22 +81,8 @@ namespace ProyectoFinalDB1
             buttonGuardar.Enabled = false;
             MessageBox.Show(respuesta);
             limpiar();
+            groupBoxTipo.Enabled=false;
             listar();
-
-
-
-        }
-        private void limpiar()
-        {
-            textBoxNombre.Text = "";
-            textBoxCantidad.Text = "";
-            checkBox1.Checked = false;
-        }
-
-        private void buttonListar_Click(object sender, EventArgs e)
-        {
-           
-
         }
 
         private void listar()
@@ -112,14 +91,14 @@ namespace ProyectoFinalDB1
             try
             {
                 servidor.AbrirConexin();
-                sql = "Select * From Servicio"; //instruccion para listar el contenido de la tabla capacitador
+                sql = "Select * From Tipo_salon"; //instruccion para listar el contenido de la tabla capacitador
                 comando = new SqlCommand(sql, servidor.SQLServer); //configura
                 adaptador = new SqlDataAdapter(comando); //Ejecuta, abstracta
                 datos = new DataTable();
                 adaptador.Fill(datos);
-                dataGridViewServicio.DataSource = datos;
-                dataGridViewServicio.Refresh();
-                dataGridViewServicio.AutoResizeColumns();
+                dataGridViewTipoSalon.DataSource = datos;
+                dataGridViewTipoSalon.Refresh();
+                dataGridViewTipoSalon.AutoResizeColumns();
             }
             catch (Exception error)
             {
@@ -131,25 +110,9 @@ namespace ProyectoFinalDB1
             }
         }
 
-        private void dataGridViewServicio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonListar_Click(object sender, EventArgs e)
         {
-
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewServicio.Rows.Count - 1)
-            {
-                codigo = dataGridViewServicio.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textBoxNombre.Text = dataGridViewServicio.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxCantidad.Text = dataGridViewServicio.Rows[e.RowIndex].Cells[2].Value.ToString();
-                checkBox1.Checked = (bool)(dataGridViewServicio.Rows[e.RowIndex].Cells[3].Value);
-          
-
-
-                buttonEditar.Enabled = true;
-               // buttonNuevo.Enabled = false;
-                buttonGuardar.Enabled = false;
-                groupBoxServicio.Enabled = true;
-
-
-            }
+           
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -157,23 +120,19 @@ namespace ProyectoFinalDB1
             string respuesta, sql;
             try
             {
-                
+
                 servidor.AbrirConexin();
-                sql = "Update Servicio Set nombre = @nom, cantidad_restante = @cant, disponibilidad = @dis Where id_servicio = @Id";
+                sql = "Update Tipo_salon Set nombre = @nom Where id_tipo = @Id";
                 comando = new SqlCommand(sql, servidor.SQLServer);
                 param = new SqlParameter("@nom", textBoxNombre.Text);
                 comando.Parameters.Add(param);
-                param = new SqlParameter("@cant", textBoxCantidad.Text);
-                comando.Parameters.Add(param);
-                param = new SqlParameter("@dis", checkBox1.Checked);
-                comando.Parameters.Add(param);
                 param = new SqlParameter("@Id", codigo);
                 comando.Parameters.Add(param);
-                
+
 
                 comando.ExecuteNonQuery();
                 respuesta = "Se ha editado el registro en Servicio";
-               // MessageBox.Show(respuesta, "Registro editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // MessageBox.Show(respuesta, "Registro editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonNuevo.Enabled = true;
                 buttonGuardar.Enabled = false;
                 buttonEditar.Enabled = false;
@@ -188,11 +147,28 @@ namespace ProyectoFinalDB1
             }
             MessageBox.Show(respuesta);
             limpiar();
-            groupBoxServicio.Enabled = false;
+            groupBoxTipo.Enabled = false;
             listar();
         }
+
+        private void dataGridViewTipoSalon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewTipoSalon.Rows.Count - 1)
+            {
+                codigo = dataGridViewTipoSalon.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBoxNombre.Text = dataGridViewTipoSalon.Rows[e.RowIndex].Cells[1].Value.ToString();
+               
+
+
+
+                buttonEditar.Enabled = true;
+                // buttonNuevo.Enabled = false;
+                buttonGuardar.Enabled = false;
+                groupBoxTipo.Enabled = true;
+
+
+            }
+        }
     }
+    
 }
-
-
-  

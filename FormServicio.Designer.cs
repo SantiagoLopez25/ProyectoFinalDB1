@@ -1,4 +1,4 @@
-﻿namespace ProyectoFinalDB1
+namespace ProyectoFinalDB1
 {
     partial class FormServicio
     {
@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewServicio = new System.Windows.Forms.DataGridView();
-            this.buttonListar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.groupBoxServicio = new System.Windows.Forms.GroupBox();
-            this.radioButtonDisponibilidad = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
@@ -59,16 +58,7 @@
             this.dataGridViewServicio.RowTemplate.Height = 28;
             this.dataGridViewServicio.Size = new System.Drawing.Size(1225, 348);
             this.dataGridViewServicio.TabIndex = 23;
-            // 
-            // buttonListar
-            // 
-            this.buttonListar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListar.Location = new System.Drawing.Point(858, 313);
-            this.buttonListar.Name = "buttonListar";
-            this.buttonListar.Size = new System.Drawing.Size(148, 80);
-            this.buttonListar.TabIndex = 22;
-            this.buttonListar.Text = "Listar";
-            this.buttonListar.UseVisualStyleBackColor = true;
+            this.dataGridViewServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewServicio_CellContentClick);
             // 
             // buttonEliminar
             // 
@@ -83,22 +73,24 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(603, 313);
+            this.buttonEditar.Location = new System.Drawing.Point(813, 313);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 20;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(330, 313);
+            this.buttonGuardar.Location = new System.Drawing.Point(425, 313);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 19;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonNuevo
             // 
@@ -109,10 +101,11 @@
             this.buttonNuevo.TabIndex = 18;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // groupBoxServicio
             // 
-            this.groupBoxServicio.Controls.Add(this.radioButtonDisponibilidad);
+            this.groupBoxServicio.Controls.Add(this.checkBox1);
             this.groupBoxServicio.Controls.Add(this.label3);
             this.groupBoxServicio.Controls.Add(this.label2);
             this.groupBoxServicio.Controls.Add(this.textBoxCantidad);
@@ -127,14 +120,14 @@
             this.groupBoxServicio.Text = "Datos Servicio";
             this.groupBoxServicio.Enter += new System.EventHandler(this.groupBoxServicio_Enter);
             // 
-            // radioButtonDisponibilidad
+            // checkBox1
             // 
-            this.radioButtonDisponibilidad.Location = new System.Drawing.Point(937, 80);
-            this.radioButtonDisponibilidad.Name = "radioButtonDisponibilidad";
-            this.radioButtonDisponibilidad.Size = new System.Drawing.Size(21, 20);
-            this.radioButtonDisponibilidad.TabIndex = 15;
-            this.radioButtonDisponibilidad.TabStop = true;
-            this.radioButtonDisponibilidad.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(895, 77);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(22, 21);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -209,7 +202,6 @@
             this.Controls.Add(this.dataGridViewServicio);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonListar);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonGuardar);
             this.Name = "FormServicio";
@@ -228,13 +220,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewServicio;
-        private System.Windows.Forms.Button buttonListar;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.GroupBox groupBoxServicio;
-        private System.Windows.Forms.RadioButton radioButtonDisponibilidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCantidad;
@@ -242,5 +232,6 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

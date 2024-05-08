@@ -30,6 +30,7 @@ namespace ProyectoFinalDB1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
                 servidor.AbrirConexin();
@@ -71,6 +72,7 @@ namespace ProyectoFinalDB1
             {
                 servidor.CerrarConexion();
             }
+
         }
     }
 }

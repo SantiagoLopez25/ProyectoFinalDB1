@@ -187,6 +187,12 @@
     <Compile Include="FormServicio.Designer.cs">
       <DependentUpon>FormServicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTipoSalon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoSalon.Designer.cs">
+      <DependentUpon>FormTipoSalon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sys\Config.cs" />
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormServicio.resx">
       <DependentUpon>FormServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoSalon.resx">
+      <DependentUpon>FormTipoSalon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
