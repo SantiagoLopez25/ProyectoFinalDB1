@@ -32,13 +32,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-
-
             this.pass = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.user = new System.Windows.Forms.TextBox();
-
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -93,26 +90,13 @@
             this.pass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-
             this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass.Location = new System.Drawing.Point(29, 0);
             this.pass.Name = "pass";
             this.pass.PasswordChar = '*';
-            this.pass.Size = new System.Drawing.Size(197, 22);
+            this.pass.Size = new System.Drawing.Size(197, 33);
             this.pass.TabIndex = 1;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Image = global::ProyectoFinalDB1.Properties.Resources.unlock_icon_242828;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 21);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-
             // 
             // pictureBox3
             // 
@@ -138,17 +122,16 @@
             this.panel2.Size = new System.Drawing.Size(341, 36);
             this.panel2.TabIndex = 6;
             // 
-
             // user
             // 
             this.user.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.user.Dock = System.Windows.Forms.DockStyle.Fill;
             this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.Location = new System.Drawing.Point(29, 0);
+            this.user.Location = new System.Drawing.Point(44, 0);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(197, 19);
+            this.user.Size = new System.Drawing.Size(295, 28);
             this.user.TabIndex = 1;
-
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
