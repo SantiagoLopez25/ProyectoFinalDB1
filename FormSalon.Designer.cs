@@ -28,8 +28,8 @@ namespace ProyectoFinalDB1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSalon));
             this.dataGridViewSalon = new System.Windows.Forms.DataGridView();
-            this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
@@ -45,9 +45,15 @@ namespace ProyectoFinalDB1
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).BeginInit();
             this.groupBoxSalon.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewSalon
@@ -63,20 +69,10 @@ namespace ProyectoFinalDB1
             this.dataGridViewSalon.TabIndex = 23;
             this.dataGridViewSalon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSalon_CellContentClick);
             // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(1124, 360);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(148, 80);
-            this.buttonEliminar.TabIndex = 21;
-            this.buttonEliminar.Text = "Eliminar";
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            // 
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(787, 360);
+            this.buttonEditar.Location = new System.Drawing.Point(1034, 360);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 20;
@@ -87,7 +83,7 @@ namespace ProyectoFinalDB1
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(434, 360);
+            this.buttonGuardar.Location = new System.Drawing.Point(588, 360);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 19;
@@ -98,7 +94,7 @@ namespace ProyectoFinalDB1
             // buttonNuevo
             // 
             this.buttonNuevo.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.Location = new System.Drawing.Point(47, 360);
+            this.buttonNuevo.Location = new System.Drawing.Point(175, 360);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(148, 80);
             this.buttonNuevo.TabIndex = 18;
@@ -227,16 +223,48 @@ namespace ProyectoFinalDB1
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.groupBoxSalon);
             this.panel1.Controls.Add(this.dataGridViewSalon);
             this.panel1.Controls.Add(this.buttonNuevo);
             this.panel1.Controls.Add(this.buttonGuardar);
-            this.panel1.Controls.Add(this.buttonEliminar);
             this.panel1.Controls.Add(this.buttonEditar);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1324, 855);
             this.panel1.TabIndex = 24;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(472, 381);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(47, 381);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(913, 381);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // FormSalon
             // 
@@ -255,6 +283,9 @@ namespace ProyectoFinalDB1
             this.groupBoxSalon.ResumeLayout(false);
             this.groupBoxSalon.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +293,6 @@ namespace ProyectoFinalDB1
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewSalon;
-        private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonNuevo;
@@ -278,5 +308,8 @@ namespace ProyectoFinalDB1
         private System.Windows.Forms.TextBox textBoxDireccion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -58,7 +58,7 @@ namespace ProyectoFinalDB1
         private void FormPersona_Load(object sender, EventArgs e)
         {
            
-            buttonEliminar.Enabled = false;
+            //buttonEliminar.Enabled = false;
             buttonGuardar.Enabled = false;
             buttonEditar.Enabled = false;
             groupBoxPersona.Enabled = false;

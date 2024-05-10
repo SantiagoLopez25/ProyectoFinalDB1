@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace ProyectoFinalDB1
 {
@@ -16,6 +17,7 @@ namespace ProyectoFinalDB1
     {
         private Servidor servidor;
         private SqlCommand comando;
+        private SqlParameter param;
 
         public FormLogeo()
         {
@@ -38,8 +40,10 @@ namespace ProyectoFinalDB1
                 string sql = "SELECT id_usuario, Rol.nivel_privilegio FROM Usuario, Rol WHERE nombre_usuario=@user AND contrasennia=@pass";
 
                 comando = new SqlCommand(sql, this.servidor.SQLServer);
-                comando.Parameters.Add("@user", user.Text);
-                comando.Parameters.Add("@pass", pass.Text);
+                param = new SqlParameter("@user", user.Text);
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@pass", pass.Text);
+                comando.Parameters.Add(param);
 
                 SqlDataReader dr = comando.ExecuteReader();
                 if (dr.Read())

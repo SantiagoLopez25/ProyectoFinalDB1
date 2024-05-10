@@ -32,7 +32,7 @@ namespace ProyectoFinalDB1
         private void FormServicio_Load(object sender, EventArgs e)
         {
              buttonGuardar.Enabled = false;
-            buttonEliminar.Enabled = false;
+            //buttonEliminar.Enabled = false;
             buttonEditar.Enabled = false;
             groupBoxServicio.Enabled = false;
             checkBox1.Checked = false;

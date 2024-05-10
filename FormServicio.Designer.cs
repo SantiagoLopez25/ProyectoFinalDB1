@@ -28,8 +28,8 @@ namespace ProyectoFinalDB1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServicio));
             this.dataGridViewServicio = new System.Windows.Forms.DataGridView();
-            this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
@@ -42,9 +42,15 @@ namespace ProyectoFinalDB1
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServicio)).BeginInit();
             this.groupBoxServicio.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewServicio
@@ -60,20 +66,10 @@ namespace ProyectoFinalDB1
             this.dataGridViewServicio.TabIndex = 23;
             this.dataGridViewServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewServicio_CellContentClick);
             // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Location = new System.Drawing.Point(1121, 313);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(148, 80);
-            this.buttonEliminar.TabIndex = 21;
-            this.buttonEliminar.Text = "Eliminar";
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            // 
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(813, 313);
+            this.buttonEditar.Location = new System.Drawing.Point(1030, 313);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(148, 80);
             this.buttonEditar.TabIndex = 20;
@@ -84,7 +80,7 @@ namespace ProyectoFinalDB1
             // buttonGuardar
             // 
             this.buttonGuardar.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(425, 313);
+            this.buttonGuardar.Location = new System.Drawing.Point(584, 313);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(148, 80);
             this.buttonGuardar.TabIndex = 19;
@@ -95,7 +91,7 @@ namespace ProyectoFinalDB1
             // buttonNuevo
             // 
             this.buttonNuevo.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.Location = new System.Drawing.Point(44, 313);
+            this.buttonNuevo.Location = new System.Drawing.Point(171, 313);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(148, 80);
             this.buttonNuevo.TabIndex = 18;
@@ -190,6 +186,36 @@ namespace ProyectoFinalDB1
             this.panel2.Size = new System.Drawing.Size(26, 913);
             this.panel2.TabIndex = 25;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(466, 327);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 30;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(44, 327);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(912, 327);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -197,12 +223,14 @@ namespace ProyectoFinalDB1
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1318, 934);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBoxServicio);
             this.Controls.Add(this.dataGridViewServicio);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonGuardar);
             this.Name = "FormServicio";
             this.ShowIcon = false;
@@ -213,6 +241,9 @@ namespace ProyectoFinalDB1
             this.groupBoxServicio.ResumeLayout(false);
             this.groupBoxServicio.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,7 +251,6 @@ namespace ProyectoFinalDB1
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewServicio;
-        private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonNuevo;
@@ -233,5 +263,8 @@ namespace ProyectoFinalDB1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
