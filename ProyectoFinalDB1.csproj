@@ -151,11 +151,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="FormLogeo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="FormLogeo.Designer.cs">
+      <DependentUpon>FormLogeo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPantallaAdmin.cs">
       <SubType>Form</SubType>
@@ -197,8 +197,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sys\Config.cs" />
     <Compile Include="Sys\Servidor.cs" />
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="Sys\Usuario.cs" />
+    <EmbeddedResource Include="FormLogeo.resx">
+      <DependentUpon>FormLogeo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPantallaAdmin.resx">
       <DependentUpon>FormPantallaAdmin.cs</DependentUpon>

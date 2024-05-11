@@ -16,7 +16,7 @@ namespace ProyectoFinalDB1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormServicio());
+            Application.Run(new FormLogeo());
         }
     }
 }

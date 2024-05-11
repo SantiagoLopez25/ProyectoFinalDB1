@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,11 +36,13 @@ namespace ProyectoFinalDB1
             {
                 servidor.AbrirConexin();
 
-                string sql = "SELECT id_usuario, Rol.nivel_privilegio FROM Usuario, Rol WHERE nombre_usuario=@user AND contrasennia=@pass";
+                string sql = "SELECT id_usuario, Rol.nivel_privilegio FROM Usuario, Rol WHERE nombre_usuario=@user AND contrasennia=@pass AND Usuario.id_rol=Rol.id_rol";
 
                 comando = new SqlCommand(sql, this.servidor.SQLServer);
+
                 param = new SqlParameter("@user", user.Text);
                 comando.Parameters.Add(param);
+
                 param = new SqlParameter("@pass", pass.Text);
                 comando.Parameters.Add(param);
 
@@ -51,14 +52,21 @@ namespace ProyectoFinalDB1
                     int idUser = dr.GetInt32(0);
                     string nivelPrivilegio = dr.GetString(1);
 
+                    // Dependiendo del nivel de privilegio del usuario; iniciará sesión en un formulario (ventana)
+                    // diferente y única.
+
+                    // El nivel de privilegios '0' es el usuario con el poder sobre toda la base de datos que
+                    // utiliza este sistema. MUY AL ESTILO DE LINUX ;) ....
                     if (Convert.ToInt32(nivelPrivilegio) > 0)
                     {
                         FormPantallaEmpleado winDef = new FormPantallaEmpleado();
+                        winDef.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
                         winDef.Show();
                     }
                     else
                     {
                         FormPantallaAdmin winRoot = new FormPantallaAdmin();
+                        winRoot.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
                         winRoot.Show();
                     }
                     Hide();
@@ -77,6 +85,11 @@ namespace ProyectoFinalDB1
                 servidor.CerrarConexion();
             }
 
+        }
+
+        private void FormLogeo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
