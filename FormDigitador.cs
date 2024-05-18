@@ -291,7 +291,7 @@ namespace ProyectoFinalDB1
 
                 param = new SqlParameter("@no_asistentes", textBoxAsistentes.Text);
                 comando.Parameters.Add(param);
-                param = new SqlParameter("@descripcion", "");
+                param = new SqlParameter("@descripcion", richTextBoxDescripcion.Text);
                 comando.Parameters.Add(param);
 
                 param = new SqlParameter("@id_encargado", id_encargado);

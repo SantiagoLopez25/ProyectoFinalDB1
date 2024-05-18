@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBoxResponsable = new System.Windows.Forms.GroupBox();
+            this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
             this.comboBoxTipoEvento = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
@@ -61,18 +65,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.richTextBoxDescripcion = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxResponsable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,8 +85,25 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 687);
+            this.panel1.Size = new System.Drawing.Size(274, 803);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 206);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Eventos Registrados:";
+            // 
+            // dataGridViewEventos
+            // 
+            this.dataGridViewEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEventos.Location = new System.Drawing.Point(12, 242);
+            this.dataGridViewEventos.Name = "dataGridViewEventos";
+            this.dataGridViewEventos.Size = new System.Drawing.Size(240, 433);
+            this.dataGridViewEventos.TabIndex = 0;
             // 
             // panel2
             // 
@@ -93,17 +112,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(274, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(974, 687);
+            this.panel2.Size = new System.Drawing.Size(974, 803);
             this.panel2.TabIndex = 1;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.richTextBoxDescripcion);
+            this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 589);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(974, 98);
+            this.groupBox2.Size = new System.Drawing.Size(974, 214);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Otros";
@@ -166,6 +187,22 @@
             this.groupBoxResponsable.TabIndex = 0;
             this.groupBoxResponsable.TabStop = false;
             this.groupBoxResponsable.Text = "Nuevo Evento";
+            // 
+            // dateTimeFinal
+            // 
+            this.dateTimeFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimeFinal.Location = new System.Drawing.Point(56, 529);
+            this.dateTimeFinal.Name = "dateTimeFinal";
+            this.dateTimeFinal.Size = new System.Drawing.Size(92, 20);
+            this.dateTimeFinal.TabIndex = 2;
+            // 
+            // dateTimeInicio
+            // 
+            this.dateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimeInicio.Location = new System.Drawing.Point(56, 453);
+            this.dateTimeInicio.Name = "dateTimeInicio";
+            this.dateTimeInicio.Size = new System.Drawing.Size(92, 20);
+            this.dateTimeInicio.TabIndex = 3;
             // 
             // comboBoxTipoEvento
             // 
@@ -398,44 +435,28 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Personas:";
             // 
-            // dataGridViewEventos
+            // label17
             // 
-            this.dataGridViewEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(12, 242);
-            this.dataGridViewEventos.Name = "dataGridViewEventos";
-            this.dataGridViewEventos.Size = new System.Drawing.Size(240, 433);
-            this.dataGridViewEventos.TabIndex = 0;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(266, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Descripcion:";
             // 
-            // label1
+            // richTextBoxDescripcion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 206);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Eventos Registrados:";
-            // 
-            // dateTimeFinal
-            // 
-            this.dateTimeFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimeFinal.Location = new System.Drawing.Point(56, 529);
-            this.dateTimeFinal.Name = "dateTimeFinal";
-            this.dateTimeFinal.Size = new System.Drawing.Size(92, 20);
-            this.dateTimeFinal.TabIndex = 2;
-            // 
-            // dateTimeInicio
-            // 
-            this.dateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimeInicio.Location = new System.Drawing.Point(56, 453);
-            this.dateTimeInicio.Name = "dateTimeInicio";
-            this.dateTimeInicio.Size = new System.Drawing.Size(92, 20);
-            this.dateTimeInicio.TabIndex = 3;
+            this.richTextBoxDescripcion.Location = new System.Drawing.Point(269, 48);
+            this.richTextBoxDescripcion.Name = "richTextBoxDescripcion";
+            this.richTextBoxDescripcion.Size = new System.Drawing.Size(693, 104);
+            this.richTextBoxDescripcion.TabIndex = 3;
+            this.richTextBoxDescripcion.Text = "";
             // 
             // FormDigitador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 687);
+            this.ClientSize = new System.Drawing.Size(1248, 803);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormDigitador";
@@ -443,14 +464,15 @@
             this.Load += new System.EventHandler(this.FormDigitador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBoxResponsable.ResumeLayout(false);
             this.groupBoxResponsable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,5 +516,7 @@
         private System.Windows.Forms.DataGridView dataGridViewEventos;
         private System.Windows.Forms.DateTimePicker dateTimeFinal;
         private System.Windows.Forms.DateTimePicker dateTimeInicio;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RichTextBox richTextBoxDescripcion;
     }
 }
