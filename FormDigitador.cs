@@ -441,7 +441,7 @@ namespace ProyectoFinalDB1
                         comboBoxServicios.SelectedIndex = 0;
                     }
 
-                    MessageBox.Show("Servicio Agregado: " + s.Nombre);
+                    MessageBox.Show("Servicio Agregado: " + s.Nombre + ", Cantidad: " + s.Cantidad);
                 } else
                 {
                     MessageBox.Show("Servicios Agotado: " + s.Nombre);
@@ -467,6 +467,24 @@ namespace ProyectoFinalDB1
 
             MessageBox.Show(">> " + dateTimeFinal.Value.ToString("yyyy-MM-dd"));
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormDigitador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormLogeo init = new FormLogeo();
+            init.Show();
+
+            Hide();
         }
 
         private void dataGridViewPersona_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

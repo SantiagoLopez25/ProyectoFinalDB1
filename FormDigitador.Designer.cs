@@ -67,6 +67,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.richTextBoxDescripcion = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,11 +79,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridViewEventos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -91,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 206);
+            this.label1.Location = new System.Drawing.Point(12, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 1;
@@ -99,10 +108,13 @@
             // 
             // dataGridViewEventos
             // 
+            this.dataGridViewEventos.AllowUserToAddRows = false;
+            this.dataGridViewEventos.AllowUserToDeleteRows = false;
             this.dataGridViewEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEventos.Location = new System.Drawing.Point(12, 242);
+            this.dataGridViewEventos.Location = new System.Drawing.Point(12, 286);
             this.dataGridViewEventos.Name = "dataGridViewEventos";
-            this.dataGridViewEventos.Size = new System.Drawing.Size(240, 433);
+            this.dataGridViewEventos.ReadOnly = true;
+            this.dataGridViewEventos.Size = new System.Drawing.Size(240, 494);
             this.dataGridViewEventos.TabIndex = 0;
             // 
             // panel2
@@ -131,7 +143,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(130, 39);
+            this.button4.Location = new System.Drawing.Point(9, 92);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 47);
             this.button4.TabIndex = 1;
@@ -206,6 +218,7 @@
             // 
             // comboBoxTipoEvento
             // 
+            this.comboBoxTipoEvento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoEvento.FormattingEnabled = true;
             this.comboBoxTipoEvento.Location = new System.Drawing.Point(86, 77);
             this.comboBoxTipoEvento.Name = "comboBoxTipoEvento";
@@ -256,6 +269,7 @@
             // 
             // comboBoxServicios
             // 
+            this.comboBoxServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxServicios.FormattingEnabled = true;
             this.comboBoxServicios.Location = new System.Drawing.Point(524, 81);
             this.comboBoxServicios.Name = "comboBoxServicios";
@@ -283,6 +297,8 @@
             // 
             // dataGridViewServicio
             // 
+            this.dataGridViewServicio.AllowUserToAddRows = false;
+            this.dataGridViewServicio.AllowUserToDeleteRows = false;
             this.dataGridViewServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewServicio.Location = new System.Drawing.Point(443, 427);
             this.dataGridViewServicio.Name = "dataGridViewServicio";
@@ -307,18 +323,24 @@
             // 
             // dataGridViewSalon
             // 
+            this.dataGridViewSalon.AllowUserToAddRows = false;
+            this.dataGridViewSalon.AllowUserToDeleteRows = false;
             this.dataGridViewSalon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSalon.Location = new System.Drawing.Point(443, 161);
             this.dataGridViewSalon.Name = "dataGridViewSalon";
+            this.dataGridViewSalon.ReadOnly = true;
             this.dataGridViewSalon.Size = new System.Drawing.Size(506, 222);
             this.dataGridViewSalon.TabIndex = 29;
             this.dataGridViewSalon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSalon_CellContentClick);
             // 
             // dataGridViewPersona
             // 
+            this.dataGridViewPersona.AllowUserToAddRows = false;
+            this.dataGridViewPersona.AllowUserToDeleteRows = false;
             this.dataGridViewPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPersona.Location = new System.Drawing.Point(9, 161);
             this.dataGridViewPersona.Name = "dataGridViewPersona";
+            this.dataGridViewPersona.ReadOnly = true;
             this.dataGridViewPersona.Size = new System.Drawing.Size(381, 222);
             this.dataGridViewPersona.TabIndex = 28;
             this.dataGridViewPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPersona_CellContentClick_1);
@@ -438,7 +460,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(266, 20);
+            this.label17.Location = new System.Drawing.Point(131, 32);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(66, 13);
             this.label17.TabIndex = 2;
@@ -446,11 +468,51 @@
             // 
             // richTextBoxDescripcion
             // 
-            this.richTextBoxDescripcion.Location = new System.Drawing.Point(269, 48);
+            this.richTextBoxDescripcion.Location = new System.Drawing.Point(134, 48);
             this.richTextBoxDescripcion.Name = "richTextBoxDescripcion";
-            this.richTextBoxDescripcion.Size = new System.Drawing.Size(693, 104);
+            this.richTextBoxDescripcion.Size = new System.Drawing.Size(828, 154);
             this.richTextBoxDescripcion.TabIndex = 3;
             this.richTextBoxDescripcion.Text = "";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProyectoFinalDB1.Properties.Resources.profile_circle_icon_242774;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(90, 161);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(78, 15);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Bienvenido";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(15, 187);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Cerrar Sesión...";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(140, 186);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(112, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Salir";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // FormDigitador
             // 
@@ -460,7 +522,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormDigitador";
-            this.Text = "FormDigitador";
+            this.Text = "Digitador";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDigitador_FormClosing);
             this.Load += new System.EventHandler(this.FormDigitador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -473,6 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,5 +582,9 @@
         private System.Windows.Forms.DateTimePicker dateTimeInicio;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RichTextBox richTextBoxDescripcion;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
     }
 }
