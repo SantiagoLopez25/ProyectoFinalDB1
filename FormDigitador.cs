@@ -26,10 +26,41 @@ namespace ProyectoFinalDB1
         private string id_encargado,
                         id_salon;
 
+        private string id_evento;
+        private bool editando;
+
         public FormDigitador()
         {
             this.servidor = new Servidor();
             InitializeComponent();
+        }
+
+        private void RestablecerUI()
+        {
+            id_evento = null;
+
+            textBoxAsistentes.Text = "";
+            richTextBoxDescripcion.Text = "";
+
+            id_encargado = null;
+            textBoxResponsable.Text = "";
+
+            id_salon = null;
+            textBoxSalon.Text = "";
+
+            if (comboBoxServicios.Items.Count > 0 )
+            {
+                comboBoxTipoEvento.SelectedIndex = 0;
+            }
+
+            dateTimeInicio.Value = DateTime.Now;
+            dateTimeFinal.Value = DateTime.Now;
+
+            dateTimePickerInicio.Value = DateTime.Now;
+            dateTimePickerFinal.Value = DateTime.Now;
+
+            comboBoxServicios.Items.Clear();
+            comboBoxServicios.Refresh();
         }
 
         //--------------------------------------------------------------------------------------------------------------------------
@@ -268,8 +299,8 @@ namespace ProyectoFinalDB1
                     comando.Parameters.Add(param);
                     comando.ExecuteNonQuery();
                 }
+                MessageBox.Show("Evento Creada...");
             }
-
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
@@ -282,7 +313,7 @@ namespace ProyectoFinalDB1
 
         public int GuardarEvento()
         {
-            string sql, respuesta;
+            string sql;
             try
             {
                 servidor.AbrirConexin();
@@ -402,6 +433,54 @@ namespace ProyectoFinalDB1
             ListarServicio();
         }
 
+        private int  ActualizarEventos()
+        {
+            string sql;
+            try
+            {
+                servidor.AbrirConexin();
+                sql = "UPDATE Evento SET no_asistentes=@no_asistentes, descripcion=@descripcion, id_encargado=@id_encargado, id_salon=@id_salon, id_tipo=@id_tipo, hora_inicio=@hora_inicio, hora_final=@hora_final, fecha_inicio=@fecha_inicio, fecha_final=@fecha_final WHERE id_eventos=@id_eventos";
+                comando = new SqlCommand(sql, servidor.SQLServer);
+
+                param = new SqlParameter("@no_asistentes", textBoxAsistentes.Text);
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@descripcion", richTextBoxDescripcion.Text);
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@id_encargado", id_encargado);
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@id_salon", id_salon);
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@id_tipo", comboBoxTipoEvento.SelectedValue);
+
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@hora_inicio", DateTime.Parse(dateTimeInicio.Value.ToString()).ToString("hh:mm:ss"));
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@hora_final", DateTime.Parse(dateTimeFinal.Value.ToString()).ToString("hh:mm:ss"));
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@fecha_inicio", dateTimePickerInicio.Value.ToString("yyyy-MM-dd"));
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@fecha_final", dateTimePickerFinal.Value.ToString("yyyy-MM-dd"));
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@id_eventos", id_evento);
+                comando.Parameters.Add(param);
+                comando.ExecuteNonQuery();
+
+                return Convert.ToInt32(id_evento);
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            finally
+            {
+                servidor.CerrarConexion();
+            }
+            return -1;
+        }
+
         private void FormDigitador_Load(object sender, EventArgs e)
         {
             ListarPersonas();
@@ -464,9 +543,8 @@ namespace ProyectoFinalDB1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show(">> " + dateTimeFinal.Value.ToString("yyyy-MM-dd"));
-            
+            editando = false;
+            RestablecerUI();            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -485,6 +563,110 @@ namespace ProyectoFinalDB1
             init.Show();
 
             Hide();
+        }
+
+        private void dataGridViewEventos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex <= dataGridViewEventos.Rows.Count - 1)
+            {
+                id_evento = dataGridViewEventos.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                textBoxAsistentes.Text = dataGridViewEventos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                richTextBoxDescripcion.Text = dataGridViewEventos.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                id_encargado = dataGridViewEventos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBoxResponsable.Text = GetValorTabla(id_encargado, dataGridViewPersona);
+
+                id_salon = dataGridViewEventos.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBoxSalon.Text = GetValorTabla(id_salon, dataGridViewSalon);
+
+                comboBoxTipoEvento.SelectedValue = dataGridViewEventos.Rows[e.RowIndex].Cells[5].Value;
+
+                dateTimeInicio.Value = DateTime.Parse(dataGridViewEventos.Rows[e.RowIndex].Cells[6].Value.ToString());
+                dateTimeFinal.Value = DateTime.Parse(dataGridViewEventos.Rows[e.RowIndex].Cells[7].Value.ToString());
+
+                dateTimePickerInicio.Value = DateTime.Parse(dataGridViewEventos.Rows[e.RowIndex].Cells[8].Value.ToString());
+                dateTimePickerFinal.Value = DateTime.Parse(dataGridViewEventos.Rows[e.RowIndex].Cells[9].Value.ToString());
+                SetServicios(id_evento);
+                editando = true;
+            }
+        }
+
+        public void SetServicios(string id)
+        {
+            string sql;
+            try
+            {
+                MessageBox.Show("Id: " + id);
+                servidor.AbrirConexin();
+                sql = "SELECT Servicio.id_servicio AS [Id], Servicio.nombre AS [Nombre] FROM Evento_servicio_tabla, Evento, Servicio WHERE Evento_servicio_tabla.id_eventos=Evento.id_eventos AND Evento_servicio_tabla.id_servicio=Servicio.id_servicio AND Evento_servicio_tabla.id_eventos=@Id";
+
+                comando = new SqlCommand(sql, servidor.SQLServer);
+
+                param = new SqlParameter("@Id", id);
+                comando.Parameters.Add(param);
+
+                adaptador = new SqlDataAdapter(comando);
+                datos = new DataTable();
+                adaptador.Fill(datos);
+
+                comboBoxServicios.Items.Clear();
+                for (int  i = 0; i < datos.Rows.Count; i++)
+                {
+                    Servicio s = new Servicio(datos.Rows[i]["Id"].ToString(), datos.Rows[i]["Nombre"].ToString(), 0);
+                    comboBoxServicios.Items.Add(s);
+                }
+
+                comboBoxServicios.DisplayMember = "Nombre";
+                comboBoxServicios.ValueMember = "Id";
+                comboBoxServicios.Refresh();
+
+                if (comboBoxServicios.Items.Count > 0)
+                {
+                    comboBoxServicios.SelectedIndex = 0;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            finally
+            {
+                servidor.CerrarConexion();
+            }
+        }
+
+        public string GetValorTabla(string id, DataGridView tabla)
+        {
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                if (id.Equals(tabla.Rows[i].Cells[0].Value.ToString()))
+                {
+                    return tabla.Rows[i].Cells[1].Value.ToString();
+                }
+            }
+            return null;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ActualizarEventos();
+            ListarEventos();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (editando)
+            {
+                MessageBox.Show("Esta editando...");
+                return;
+            }
+
+            comboBoxServicios.Items.RemoveAt(comboBoxServicios.SelectedIndex);
+            if (comboBoxServicios.Items.Count > 0)
+            {
+                comboBoxServicios.SelectedIndex = 0;
+            }
         }
 
         private void dataGridViewPersona_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

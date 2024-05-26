@@ -57,17 +57,24 @@ namespace ProyectoFinalDB1
 
                     // El nivel de privilegios '0' es el usuario con el poder sobre toda la base de datos que
                     // utiliza este sistema. MUY AL ESTILO DE LINUX ;) ....
-                    if (Convert.ToInt32(nivelPrivilegio) > 0)
-                    {
-                        FormPantallaEmpleado winDef = new FormPantallaEmpleado();
-                        winDef.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
-                        winDef.Show();
-                    }
-                    else
+                    if (Convert.ToInt32(nivelPrivilegio) == 0)
                     {
                         FormPantallaAdmin winRoot = new FormPantallaAdmin();
                         winRoot.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
                         winRoot.Show();
+
+                        
+                    }
+                    else if (Convert.ToInt32(nivelPrivilegio) == 1)
+                    {
+                        FormDigitador winDidit = new FormDigitador();
+                        winDidit.Show();
+                    }
+                    else
+                    {
+                        FormPantallaEmpleado winDef = new FormPantallaEmpleado();
+                        winDef.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
+                        winDef.Show();
                     }
                     Hide();
                 }
