@@ -41,6 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonRegresar = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrganizador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformacionP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
@@ -175,12 +177,29 @@
             this.buttonRegresar.UseVisualStyleBackColor = true;
             this.buttonRegresar.Click += new System.EventHandler(this.buttonRegresar_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(200, 751);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 125);
+            this.panel3.TabIndex = 12;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(1196, 632);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(49, 125);
+            this.panel4.TabIndex = 13;
+            // 
             // FormBusOrganizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1241, 848);
+            this.ClientSize = new System.Drawing.Size(1241, 908);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonRegresar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
@@ -221,5 +240,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonRegresar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -108,7 +108,7 @@ namespace ProyectoFinalDB1
 
                     InfoAdicional.Fecha = monthCalendar1.SelectionStart;
                     FormInfoAdicional info = new FormInfoAdicional();
-                    info.Show();
+                    info.ShowDialog();
                 }
                
 
