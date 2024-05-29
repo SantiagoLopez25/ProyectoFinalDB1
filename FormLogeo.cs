@@ -61,20 +61,18 @@ namespace ProyectoFinalDB1
                     {
                         FormPantallaAdmin winRoot = new FormPantallaAdmin();
                         winRoot.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
-                        winRoot.Show();
-
-                        
+                        winRoot.Show();                        
                     }
                     else if (Convert.ToInt32(nivelPrivilegio) == 1)
                     {
-                        FormDigitador winDidit = new FormDigitador();
-                        winDidit.Show();
+                        FormReportes winDef = new FormReportes();
+                        winDef.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
+                        winDef.Show();
                     }
                     else
                     {
-                        FormPantallaEmpleado winDef = new FormPantallaEmpleado();
-                        winDef.SetUsuario(user.Text, Convert.ToInt32(nivelPrivilegio));
-                        winDef.Show();
+                        FormDigitador winDidit = new FormDigitador();
+                        winDidit.Show();
                     }
                     Hide();
                 }
