@@ -181,6 +181,12 @@
     <Compile Include="FormInfoAdicional.Designer.cs">
       <DependentUpon>FormInfoAdicional.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDigitador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDigitador.Designer.cs">
+      <DependentUpon>FormDigitador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogeo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,7 @@
     </Compile>
     <Compile Include="Sys\Config.cs" />
     <Compile Include="Sys\InfoAdicional.cs" />
+    <Compile Include="Sys\Servicio.cs" />
     <Compile Include="Sys\Servidor.cs" />
     <Compile Include="Sys\Usuario.cs" />
     <EmbeddedResource Include="FormBusFecha.resx">
@@ -249,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInfoAdicional.resx">
       <DependentUpon>FormInfoAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDigitador.resx">
+      <DependentUpon>FormDigitador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogeo.resx">
       <DependentUpon>FormLogeo.cs</DependentUpon>
