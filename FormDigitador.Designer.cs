@@ -43,7 +43,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBoxResponsable = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonServiciosES = new System.Windows.Forms.Button();
             this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
             this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
             this.comboBoxTipoEvento = new System.Windows.Forms.ComboBox();
@@ -238,7 +238,7 @@
             // groupBoxResponsable
             // 
             this.groupBoxResponsable.AutoSize = true;
-            this.groupBoxResponsable.Controls.Add(this.button7);
+            this.groupBoxResponsable.Controls.Add(this.buttonServiciosES);
             this.groupBoxResponsable.Controls.Add(this.dateTimeFinal);
             this.groupBoxResponsable.Controls.Add(this.dateTimeInicio);
             this.groupBoxResponsable.Controls.Add(this.comboBoxTipoEvento);
@@ -276,15 +276,15 @@
             this.groupBoxResponsable.TabStop = false;
             this.groupBoxResponsable.Text = "Nuevo Evento";
             // 
-            // button7
+            // buttonServiciosES
             // 
-            this.button7.Location = new System.Drawing.Point(874, 81);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 42;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonServiciosES.Location = new System.Drawing.Point(874, 81);
+            this.buttonServiciosES.Name = "buttonServiciosES";
+            this.buttonServiciosES.Size = new System.Drawing.Size(75, 23);
+            this.buttonServiciosES.TabIndex = 42;
+            this.buttonServiciosES.Text = "Eliminar";
+            this.buttonServiciosES.UseVisualStyleBackColor = true;
+            this.buttonServiciosES.Click += new System.EventHandler(this.button7_Click);
             // 
             // dateTimeFinal
             // 
@@ -618,6 +618,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonServiciosES;
     }
 }

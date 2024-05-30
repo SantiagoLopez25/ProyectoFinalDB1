@@ -61,6 +61,7 @@ namespace ProyectoFinalDB1
 
             comboBoxServicios.Items.Clear();
             comboBoxServicios.Refresh();
+            buttonServiciosES.Text = "Eliminar";
         }
 
         //--------------------------------------------------------------------------------------------------------------------------
@@ -615,6 +616,8 @@ namespace ProyectoFinalDB1
                 dateTimePickerInicio.Value = DateTime.Parse(dataGridViewEventos.Rows[e.RowIndex].Cells[8].Value.ToString());
                 dateTimePickerFinal.Value = DateTime.Parse(dataGridViewEventos.Rows[e.RowIndex].Cells[9].Value.ToString());
                 SetServicios(id_evento);
+
+                buttonServiciosES.Text = "Editar.";
                 editando = true;
             }
         }
