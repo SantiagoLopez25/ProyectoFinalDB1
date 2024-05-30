@@ -199,12 +199,6 @@
     <Compile Include="FormPantallaAdmin.Designer.cs">
       <DependentUpon>FormPantallaAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPantallaEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPantallaEmpleado.Designer.cs">
-      <DependentUpon>FormPantallaEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPersona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,9 +259,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPantallaAdmin.resx">
       <DependentUpon>FormPantallaAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPantallaEmpleado.resx">
-      <DependentUpon>FormPantallaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersona.resx">
       <DependentUpon>FormPersona.cs</DependentUpon>

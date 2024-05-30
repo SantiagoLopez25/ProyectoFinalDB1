@@ -79,10 +79,34 @@ namespace ProyectoFinalDB1
                 comando.Parameters.Add(param);
 
                 SqlDataReader dr = comando.ExecuteReader();
+                bool disponible  = false, 
+                    reservado    = false;
+
                 if (dr.Read())
                 {
-                    return dr.GetBoolean(0);
+                    disponible = dr.GetBoolean(0);
                 }
+
+                sql = "SELECT * FROM Evento, Salon WHERE Evento.id_salon=Salon.id_salon AND Evento.fecha_final=@fecha AND Salon.id_salon=@id_salon";
+                comando = new SqlCommand(sql, this.servidor.SQLServer);
+
+                param = new SqlParameter("@fecha", dateTimePickerInicio.Value.ToString("yyyy-MM-dd"));
+                comando.Parameters.Add(param);
+                param = new SqlParameter("@id_salon", id_salon);
+                comando.Parameters.Add(param);
+
+                dr.Close();
+                dr = comando.ExecuteReader();
+                if (dr.Read() && dr.HasRows)
+                {
+                    reservado = true;
+                }
+
+                if (disponible && !reservado)
+                {
+                    return true;
+                }
+                return false;
             }
             catch (Exception error)
             {
@@ -285,7 +309,7 @@ namespace ProyectoFinalDB1
                 {
                     Servicio s = (Servicio) comboBoxServicios.Items[i];
 
-                    sql = "INSERT INTO Evento_servicio_tabla (id_eventos, id_servicio, hora, fecha) VALUES (@id_eventos, @id_servicio, @hora, @fecha)";
+                    sql = "INSERT INTO Evento_servicio_tabla (id_eventos, id_servicio, hora, fecha, cantidad) VALUES (@id_eventos, @id_servicio, @hora, @fecha, @cantidad)";
                     comando = new SqlCommand(sql, servidor.SQLServer);
 
                     param = new SqlParameter("@id_eventos", id_evento);
@@ -296,6 +320,9 @@ namespace ProyectoFinalDB1
                     param = new SqlParameter("@hora", DateTime.Now.ToString("hh:mm:ss"));
                     comando.Parameters.Add(param);
                     param = new SqlParameter("@fecha", DateTime.Now.ToString("yyyy-MM-dd"));
+                    comando.Parameters.Add(param);
+
+                    param = new SqlParameter("@cantidad", s.Cantidad);
                     comando.Parameters.Add(param);
                     comando.ExecuteNonQuery();
                 }
@@ -378,7 +405,7 @@ namespace ProyectoFinalDB1
                 sql = "Update Salon Set disponibilidad=@dis Where id_salon = @Id";
                 comando = new SqlCommand(sql, servidor.SQLServer);
 
-                param = new SqlParameter("@dis", false);
+                param = new SqlParameter("@dis", true);
                 comando.Parameters.Add(param);
 
                 param = new SqlParameter("@Id", id_salon);
