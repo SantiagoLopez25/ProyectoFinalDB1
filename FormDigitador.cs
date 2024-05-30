@@ -688,7 +688,10 @@ namespace ProyectoFinalDB1
         {
             if (editando)
             {
-                MessageBox.Show("Esta editando...");
+                EventoServicios winE = new EventoServicios(id_evento);
+                winE.ShowDialog();
+
+                ListarServicio();
                 return;
             }
 

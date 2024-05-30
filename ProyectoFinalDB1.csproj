@@ -151,6 +151,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventoServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventoServicios.Designer.cs">
+      <DependentUpon>EventoServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBusFecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     <Compile Include="Sys\Servicio.cs" />
     <Compile Include="Sys\Servidor.cs" />
     <Compile Include="Sys\Usuario.cs" />
+    <EmbeddedResource Include="EventoServicios.resx">
+      <DependentUpon>EventoServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBusFecha.resx">
       <DependentUpon>FormBusFecha.cs</DependentUpon>
     </EmbeddedResource>
