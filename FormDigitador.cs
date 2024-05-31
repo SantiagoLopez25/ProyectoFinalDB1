@@ -263,7 +263,7 @@ namespace ProyectoFinalDB1
 
         private void ListarEventos()
         {
-            string respuesta, sql;
+            string sql;
             try
             {
                 servidor.AbrirConexin();
@@ -302,7 +302,7 @@ namespace ProyectoFinalDB1
 
         private void GuardarEventoServicios(int id_evento)
         {
-            string sql, respuesta;
+            string sql;
             try
             {
                 servidor.AbrirConexin();
@@ -398,7 +398,7 @@ namespace ProyectoFinalDB1
 
         private void ActualizarSalon()
         {
-            string respuesta, sql;
+            string sql;
             try
             {
 
