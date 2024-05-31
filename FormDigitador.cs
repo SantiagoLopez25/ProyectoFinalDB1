@@ -723,8 +723,17 @@ namespace ProyectoFinalDB1
             {
                 int cantidad;
                 servidor.AbrirConexin();
-                sql = "select count(id_salon) from Evento\r\nwhere fecha_final = '"+ dateTimePickerFinal.Value.ToString("yyyy-MM-dd") + "' and id_salon = "+id_salon;
-                comando = new SqlCommand(sql, servidor.SQLServer); 
+                sql = "select count(id_salon) from Evento\r\nwhere fecha_final = @fec  and id_salon =  @id";
+
+                comando = new SqlCommand(sql, servidor.SQLServer);
+
+                param = new SqlParameter("@fec", dateTimePickerFinal.Value.ToString("yyyy-MM-dd"));
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@id", id_salon);
+                comando.Parameters.Add(param);
+
+                 
                 SqlDataReader lector = comando.ExecuteReader(); 
 
                 if (lector.Read()) 
