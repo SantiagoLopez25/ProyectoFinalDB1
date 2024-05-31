@@ -37,11 +37,13 @@
             this.dataGridViewEventos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.richTextBoxDescripcion = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBoxResponsable = new System.Windows.Forms.GroupBox();
+            this.buttonServiciosES = new System.Windows.Forms.Button();
             this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
             this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
             this.comboBoxTipoEvento = new System.Windows.Forms.ComboBox();
@@ -71,8 +73,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).BeginInit();
@@ -162,6 +162,8 @@
             // 
             // panel2
             // 
+            this.panel2.AutoScroll = true;
+            this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBoxResponsable);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -172,18 +174,29 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.richTextBoxDescripcion);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 589);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 571);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(974, 214);
+            this.groupBox2.Size = new System.Drawing.Size(974, 221);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Otros";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(8, 145);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(104, 47);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Editar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // richTextBoxDescripcion
             // 
@@ -224,7 +237,8 @@
             // 
             // groupBoxResponsable
             // 
-            this.groupBoxResponsable.Controls.Add(this.button7);
+            this.groupBoxResponsable.AutoSize = true;
+            this.groupBoxResponsable.Controls.Add(this.buttonServiciosES);
             this.groupBoxResponsable.Controls.Add(this.dateTimeFinal);
             this.groupBoxResponsable.Controls.Add(this.dateTimeInicio);
             this.groupBoxResponsable.Controls.Add(this.comboBoxTipoEvento);
@@ -257,10 +271,20 @@
             this.groupBoxResponsable.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxResponsable.Location = new System.Drawing.Point(0, 0);
             this.groupBoxResponsable.Name = "groupBoxResponsable";
-            this.groupBoxResponsable.Size = new System.Drawing.Size(974, 589);
+            this.groupBoxResponsable.Size = new System.Drawing.Size(974, 571);
             this.groupBoxResponsable.TabIndex = 0;
             this.groupBoxResponsable.TabStop = false;
             this.groupBoxResponsable.Text = "Nuevo Evento";
+            // 
+            // buttonServiciosES
+            // 
+            this.buttonServiciosES.Location = new System.Drawing.Point(874, 81);
+            this.buttonServiciosES.Name = "buttonServiciosES";
+            this.buttonServiciosES.Size = new System.Drawing.Size(75, 23);
+            this.buttonServiciosES.TabIndex = 42;
+            this.buttonServiciosES.Text = "Eliminar";
+            this.buttonServiciosES.UseVisualStyleBackColor = true;
+            this.buttonServiciosES.Click += new System.EventHandler(this.button7_Click);
             // 
             // dateTimeFinal
             // 
@@ -519,26 +543,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Personas:";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(8, 145);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 47);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Editar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(874, 81);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 42;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // FormDigitador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,6 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventos)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBoxResponsable.ResumeLayout(false);
@@ -563,6 +568,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersona)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -612,6 +618,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonServiciosES;
     }
 }

@@ -151,6 +151,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventoServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventoServicios.Designer.cs">
+      <DependentUpon>EventoServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBusFecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,12 +205,6 @@
     <Compile Include="FormPantallaAdmin.Designer.cs">
       <DependentUpon>FormPantallaAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPantallaEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPantallaEmpleado.Designer.cs">
-      <DependentUpon>FormPantallaEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPersona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +242,9 @@
     <Compile Include="Sys\Servicio.cs" />
     <Compile Include="Sys\Servidor.cs" />
     <Compile Include="Sys\Usuario.cs" />
+    <EmbeddedResource Include="EventoServicios.resx">
+      <DependentUpon>EventoServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBusFecha.resx">
       <DependentUpon>FormBusFecha.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,9 +268,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPantallaAdmin.resx">
       <DependentUpon>FormPantallaAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPantallaEmpleado.resx">
-      <DependentUpon>FormPantallaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersona.resx">
       <DependentUpon>FormPersona.cs</DependentUpon>
