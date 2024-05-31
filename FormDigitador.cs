@@ -28,6 +28,7 @@ namespace ProyectoFinalDB1
 
         private string id_evento;
         private bool editando;
+        private bool disponible = false;
 
         public FormDigitador()
         {
@@ -560,7 +561,7 @@ namespace ProyectoFinalDB1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (DisponibleSalon())
+            if ((DisponibleSalon())&&verificarSalonPorDia())
             {
                 ActualizarGuardar();
             } else
@@ -712,6 +713,54 @@ namespace ProyectoFinalDB1
                 id_encargado = id;
                 textBoxResponsable.Text = nombre;
             }
+        }
+
+        private bool verificarSalonPorDia()
+        {
+            string respuesta, sql;
+            
+            try
+            {
+                int cantidad;
+                servidor.AbrirConexin();
+                sql = "select count(id_salon) from Evento\r\nwhere fecha_final = @fec  and id_salon =  @id";
+
+                comando = new SqlCommand(sql, servidor.SQLServer);
+
+                param = new SqlParameter("@fec", dateTimePickerFinal.Value.ToString("yyyy-MM-dd"));
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@id", id_salon);
+                comando.Parameters.Add(param);
+
+                 
+                SqlDataReader lector = comando.ExecuteReader(); 
+
+                if (lector.Read()) 
+                {
+                    cantidad = lector.GetInt32(0);
+                    if (cantidad == 0)
+                    {
+                        disponible = true;
+                    }
+                    else
+                    {
+                        disponible = false;
+                    }
+                }
+                lector.Close(); 
+
+               
+            }
+            catch (Exception error)
+            {
+                respuesta = "Error: " + error.Message;
+            }
+            finally
+            {
+                servidor.CerrarConexion();
+            }
+            return disponible;
         }
     }
 }
